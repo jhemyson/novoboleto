@@ -2,11 +2,7 @@ import express from 'express';
 import morgarn from 'morgan';
 import cors from 'cors';
 import routes from './routes';
-import  dotenv from 'dotenv';
-
-dotenv.config({
-  path: process.env.NODE_ENV === "dev" ? ".env.dev" : ".env"
-})
+import database from './database/database'
 
 class App {
   constructor(){
@@ -14,6 +10,7 @@ class App {
 
     this._middlewares();
     this._routes();
+    this._databases();
   }
 
   start(port){
@@ -29,6 +26,10 @@ class App {
 
   _routes(){
     this._app.use(routes);
+  }
+
+  _databases(){
+    database.start()
   }
 
 }

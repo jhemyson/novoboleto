@@ -1,10 +1,9 @@
 import Sequelize, { Model } from 'sequelize';
 
-export class Partner extends Model {
+export default class Partner extends Model {
   static init(sequelize){
     super.init({
       api_key: Sequelize.STRING,
-
       active: Sequelize.BOOLEAN,
     }, {
       sequelize,

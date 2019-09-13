@@ -1,6 +1,6 @@
 import Sequelize, { Model } from 'sequelize';
 
-export class Marketplace extends Model {
+export default class Marketplace extends Model {
   static init(sequelize){
     super.init({
       number: Sequelize.NUMBER,
