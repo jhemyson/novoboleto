@@ -3,7 +3,7 @@ import Sequelize, { Model } from 'sequelize';
 export default class Marketplace extends Model {
   static init(sequelize){
     super.init({
-      number: Sequelize.NUMBER,
+      number: Sequelize.STRING,
       active: Sequelize.BOOLEAN,
     }, {
       sequelize,
