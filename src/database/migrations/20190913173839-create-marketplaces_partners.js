@@ -35,6 +35,6 @@ module.exports = {
   },
 
   down: (queryInterface) => {
-    return queryInterface.dropTable('marketplaces');
+    return queryInterface.dropTable('marketplaces_partners');
   }
 };

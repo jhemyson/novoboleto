@@ -9,13 +9,6 @@ module.exports = {
         autoIncrement: true,
         primaryKey: true
       },
-      marketplace_id: {
-        type: Sequelize.INTEGER,
-        references: { model: 'marketplaces', key: 'id' },
-        onUpdate: 'CASCADE',
-        onDelete: 'SET NULL',
-        allowNull: false
-      },
       api_key: {
         type: Sequelize.STRING,
         allowNull: false
@@ -37,6 +30,6 @@ module.exports = {
   },
 
   down: (queryInterface) => {
-    return queryInterface.dropTable('marketplaces');
+    return queryInterface.dropTable('partners');
   }
 };

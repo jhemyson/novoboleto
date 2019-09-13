@@ -3,7 +3,8 @@ import Sequelize, { Model } from 'sequelize';
 export class Partner extends Model {
   static init(sequelize){
     super.init({
-      number: Sequelize.NUMBER,
+      api_key: Sequelize.STRING,
+
       active: Sequelize.BOOLEAN,
     }, {
       sequelize,
@@ -11,4 +12,13 @@ export class Partner extends Model {
 
     return this
   }
+
+  static associations(models){
+    this.belongsToMany(models.Marketplace, {
+      through: 'marketplaces_partners',
+      as: 'marketplaces',
+      foreignKey: 'partner_id'
+    })
+  }
 }
+
