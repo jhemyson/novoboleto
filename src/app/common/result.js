@@ -1,13 +1,14 @@
 export default class Result {
-  constructor(message, success, data, errors){
+  constructor(response ,message, success, data, errors){
+    this.response = response;
     this.message = message;
     this.success = success;
     this.data = data;
     this.errors = errors
   }
 
-  success(response){
-    return response.json({
+  success(){
+    return this.response.json({
       message: this.message,
       success: this.success,
       data: this.data,
@@ -15,8 +16,8 @@ export default class Result {
     })
   }
 
-  unsuccess(response, status_code){
-      return response.status(status_code).json({
+  unsuccess(status_code){
+      return this.response.status(status_code).json({
         message: this.message,
         success: this.success,
         data: this.data,
