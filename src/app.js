@@ -1,8 +1,11 @@
+import './dotenv'
 import express from 'express';
 import morgarn from 'morgan';
 import cors from 'cors';
 import routes from './routes';
 import database from './database/database'
+
+console.log(process.env.NODE_ENV)
 
 class App {
   constructor(){

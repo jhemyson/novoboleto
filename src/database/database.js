@@ -1,6 +1,6 @@
 import Sequelize from 'sequelize';
 import Marketplace from '../app/models/marketplace';
-import Partner from '../app/models/partern'
+import Partner from '../app/models/partner'
 import databaseConfig from '../config/database.config'
 
 

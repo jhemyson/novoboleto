@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import Partern from './app/models/partern'
+import Partern from './app/models/partner'
 
 const routes = new Router();
 
@@ -17,7 +17,6 @@ routes.get('/partners', async (req, res) => {
 
 routes.post('/partners', async (req, res) => {
   try {
-    console.log(req.body)
     return res.json(await Partern.create(req.body))
   } catch(err){
     return res.status(500).json(err)
