@@ -20,6 +20,7 @@ class App {
   }
 
   _middlewares(){
+    this._app.use(express.json());
     this._app.use(morgarn("dev"));
     this._app.use(cors());
   }

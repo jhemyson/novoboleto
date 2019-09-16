@@ -9,8 +9,14 @@ module.exports = {
         autoIncrement: true,
         primaryKey: true
       },
+      email: {
+        type: Sequelize.STRING,
+        unique: true,
+        allowNull: false,
+      },
       api_key: {
         type: Sequelize.STRING,
+        unique: true,
         allowNull: false
       },
       active: {

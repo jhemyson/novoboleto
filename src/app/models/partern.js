@@ -4,6 +4,7 @@ export default class Partner extends Model {
   static init(sequelize){
     super.init({
       api_key: Sequelize.STRING,
+      email:Sequelize.STRING,
       active: Sequelize.BOOLEAN,
     }, {
       sequelize,
